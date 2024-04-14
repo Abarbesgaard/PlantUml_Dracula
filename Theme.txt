@@ -1,0 +1,93 @@
+'⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣠⣤⣤⣤⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+'⠀⠀⠀⠀⠀⠀⢀⣴⠞⠛⠉⠉⠉⠉⠹⠏⠉⠉⠉⠉⠛⠳⣤⡀⠀⠀⠀⠀⠀⠀
+'⠀⠀⠀⠀⠀⠀⣾⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣾⣷⠀⠀⠀⠀⠀⠀
+'⠀⠀⠀⠀⠀⢀⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⡀⠀⠀⠀⠀⠀
+'⠀⠀⠀⠀⠀⢸⣿⠀⢀⣴⣶⣶⣦⣄⣀⣀⣠⣴⣶⣶⣦⡀⠀⣿⡇⠀⠀⠀⠀⠀
+'⠀⠀⠀⢠⣄⡀⠋⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠙⢀⣠⡄⠀⠀⠀
+'⠀⠀⠀⠈⣿⣿⠀⣾⡿⠋⠈⠻⣿⣿⣿⣿⣿⣿⠟⠁⠙⢿⣷⠀⣿⣿⠁⠀⠀⠀
+'⠀⠀⠀⠀⢿⣿⠀⣿⣦⡴⠛⠀⠈⠻⣿⣿⠟⠁⠀⠛⢦⣴⣿⠀⣿⡿⠀⠀⠀⠀
+'⠀⠀⠀⠀⠈⠻⠀⣿⣏⣀⣸⣿⣀⣀⣾⣷⣀⣀⣿⣇⣀⣹⣿⠀⠟⠁⠀⠀⠀⠀
+'⠀⠀⠀⠀⠀⠀⢀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⡀⠀⠀⠀⠀⠀⠀
+'⠀⠀⢀⣠⣴⣾⣿⣷⣄⠙⣿⣿⣿⣄⡉⢉⣠⣿⣿⣿⠋⣠⣾⣿⣷⣦⣄⡀⠀⠀
+'⠀⠈⠙⠻⢿⣿⣿⣿⣿⠀⣿⠛⠿⠿⠿⠿⠿⠿⠛⣿⠀⣿⣿⣿⣿⡿⠟⠋⠁⠀
+'⠀⠀⠀⠀⠀⠙⢿⣿⣿⠀⣿⣷⡄⢠⣤⣤⡄⢠⣾⣿⠀⣿⣿⡿⠋⠀⠀⠀⠀⠀
+'⠀⠀⠀⠀⠀⠀⠀⠹⣿⡄⠛⠿⢿⣾⣿⣿⣷⣿⠿⠛⢠⣿⠏⠀⠀⠀⠀⠀⠀⠀
+'⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠓⠒⠀⠀⠀⠀⠀⠀⠒⠚⠛⠛⠀⠀⠀
+skinparam TitleBackgroundColor #f8f8f2 
+skinparam TitleFontColor #f8f8f2 
+skinparam nodesep 30
+skinparam ranksep 100
+skinparam dpi 300
+skinparam ComponentBorderThickness 0
+skinparam BackgroundColor #282a36
+skinparam ComponentBackgroundColor #44475a
+skinparam ComponentBorderColor #f8f8f2
+skinparam PackageBorderColor #ff5555 
+skinparam PackageFontColor #f8f8f2 
+skinparam PackageStereotypeFontColor #f8f8f2 
+skinparam PackageBorderThickness 3
+skinparam ClassBackgroundColor #44475a
+skinparam ClassHeaderBackgroundColor #bd93f9 
+skinparam ClassFontSize 16
+skinparam ClassFontStyle Regular
+skinparam ClassFontName Space Mono
+skinparam ClassFontColor #f8f8f2 
+skinparam ClassBorderColor #bd93f9 
+skinparam ClassAttributeFontColor #f8f8f2 
+skinparam ClassAttributeIconSize 10
+skinparam ClassStereotypeFontColor #ff5555 
+skinparam ClassBorderThickness 2
+skinparam ArrowColor #8be9fd 
+skinparam RectangleFontColor #f8f8f2 
+skinparam RectangleBackgroundColor #44475a
+skinparam NoteBackgroundColor #50fa7b 
+'.---..---. .----..---..---..--. .-..-..---. .---..---.
+'| |-'| |-< | || || |  | |- | \ \| || || |-< | |-  \ \ 
+'`-'  `-'`-'`----'`---'`---'`-'-'`----'`-'`-'`---'`---'
+' Field procedures
+!unquoted procedure $Property($AccessModifier, $Restriction, $Name, $Type)
+!if ($Restriction!="")
+$AccessModifier <color:#ffb86c>$Restriction</color> <color:#f8f8f2>$Name</color> : <color:#bd93f9>$Type</color>
+!else
+$AccessModifier  <color:#f8f8f2>$Name</color> : <color:#bd93f9>$Type</color>
+!endif
+!endprocedure
+
+' Method Procedures
+!unquoted procedure $Method($AccessModifier, $MethodName, $Parameter, $ReturnValue)
+!if ($ReturnValue != "")
+$AccessModifier <color:#ff79c6>$MethodName(<color:#f8f8f2>$Parameter</color><color:#ff79c6>)</color><color:#f8f8f2> : </color><color:#f1fa8c>$ReturnValue</color>
+!else
+$AccessModifier <color:#ff79c6>$MethodName(<color:#f8f8f2>$Parameter</color><color:#ff79c6>)</color> 
+!endif
+!endprocedure
+
+' Constructor Procedures
+!unquoted procedure $Constructor($AccessModifier, $MethodName, $Parameter)
+$AccessModifier <color:#ff79c6>$MethodName(<color:#f8f8f2>$Parameter</color><color:#ff79c6>)</color>
+!endprocedure
+
+' Relations in UML
+!unquoted procedure $InherritsFromAbstraction($Concrete,$Abstraction)
+$Concrete ..|> $Abstraction
+!endprocedure
+
+!unquoted procedure $InherritsFromConcrete($ObjectA,$ObjectB)
+$ObjectA --|> $ObjectB
+!endprocedure
+
+!unquoted procedure $ObjectAssociation($ObjectA,$ObjectB)
+$ObjectA -- $ObjectB
+!endprocedure
+
+!unquoted procedure $ObjectDependency($ObjectA,$ObjectB)
+$ObjectA ..> $ObjectB
+!endprocedure
+
+!unquoted procedure $ObjectComposition($ObjectA,$ObjectB)
+$ObjectA *-- $ObjectB
+!endprocedure
+
+!unquoted procedure $ObjectAggregation($ObjectA,$ObjectB)
+$ObjectA o-- $ObjectB
+!endprocedure
