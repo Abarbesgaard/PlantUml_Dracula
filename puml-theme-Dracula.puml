@@ -1,3 +1,4 @@
+
 '⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⣠⣤⣤⣤⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 '⠀⠀⠀⠀⠀⠀⢀⣴⠞⠛⠉⠉⠉⠉⠹⠏⠉⠉⠉⠉⠛⠳⣤⡀⠀⠀⠀⠀⠀⠀
 '⠀⠀⠀⠀⠀⠀⣾⣷⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣾⣷⠀⠀⠀⠀⠀⠀
@@ -13,61 +14,71 @@
 '⠀⠀⠀⠀⠀⠙⢿⣿⣿⠀⣿⣷⡄⢠⣤⣤⡄⢠⣾⣿⠀⣿⣿⡿⠋⠀⠀⠀⠀⠀
 '⠀⠀⠀⠀⠀⠀⠀⠹⣿⡄⠛⠿⢿⣾⣿⣿⣷⣿⠿⠛⢠⣿⠏⠀⠀⠀⠀⠀⠀⠀
 '⠀⠀⠀⠀⠀⠀⠀⠀⠛⠛⠓⠒⠀⠀⠀⠀⠀⠀⠒⠚⠛⠛⠀⠀⠀
-skinparam TitleBackgroundColor #f8f8f2 
-skinparam TitleFontColor #f8f8f2 
-skinparam nodesep 30
-skinparam ranksep 100
-skinparam dpi 300
-skinparam ComponentBorderThickness 0
-skinparam BackgroundColor #282a36
-skinparam ComponentBackgroundColor #44475a
-skinparam ComponentBorderColor #f8f8f2
-skinparam PackageBorderColor #ff5555 
-skinparam PackageFontColor #f8f8f2 
-skinparam PackageStereotypeFontColor #f8f8f2 
-skinparam PackageBorderThickness 3
-skinparam ClassBackgroundColor #44475a
-skinparam ClassHeaderBackgroundColor #bd93f9 
-skinparam ClassFontSize 16
-skinparam ClassFontStyle Regular
-skinparam ClassFontName Space Mono
-skinparam ClassFontColor #f8f8f2 
-skinparam ClassBorderColor #bd93f9 
-skinparam ClassAttributeFontColor #f8f8f2 
-skinparam ClassAttributeIconSize 10
-skinparam ClassStereotypeFontColor #ff5555 
-skinparam ClassBorderThickness 2
-skinparam ArrowColor #8be9fd 
-skinparam RectangleFontColor #f8f8f2 
-skinparam RectangleBackgroundColor #44475a
-skinparam NoteBackgroundColor #50fa7b 
-'.---..---. .----..---..---..--. .-..-..---. .---..---.
-'| |-'| |-< | || || |  | |- | \ \| || || |-< | |-  \ \ 
-'`-'  `-'`-'`----'`---'`---'`-'-'`----'`-'`-'`---'`---'
-' Field procedures
+
+!if %not(%variable_exists("$BGCOLOR"))
+!$BGCOLOR = "#282a36"
+!endif
+
+'Colors
+!$Background 	= 	'#282a36'
+!$CurrentLine 	= 	'#44475a'
+!$Foreground 	= 	'#f8f8f2'
+!$Comment 		= 	'#6272a4'
+!$Cyan 			= 	'#8be9fd'
+!$Green 		= 	'#50fa7b'
+!$Orange 		= 	'#ffb86c'
+!$Pink 			= 	'#ff79c6'
+!$Purple 		= 	'#bd93f9'
+!$Red 			= 	'#ff5555'
+!$Yellow 		= 	'#f1fa8c'
+
+skinparam BackgroundColor $Background 
+ ' ____                         _                     
+ '|  _ \ _ __ ___   ___ ___  __| |_   _ _ __ ___  ___ 
+ '| |_) | '__/ _ \ / __/ _ \/ _` | | | | '__/ _ \/ __|
+ '|  __/| | | (_) | (_|  __/ (_| | |_| | | |  __/\__ \
+ '|_|   |_|  \___/ \___\___|\__,_|\__,_|_|  \___||___/
+                                                     
+
+'  ___ _     _    _                                    
+' | __(_)___| |__| | 
+' | _|| / -_) / _` | 
+' |_| |_\___|_\__,_| 
+                                                       
 !unquoted procedure $Property($AccessModifier, $Restriction, $Name, $Type)
 !if ($Restriction!="")
-$AccessModifier <color:#ffb86c>$Restriction</color> <color:#f8f8f2>$Name</color> : <color:#bd93f9>$Type</color>
+$AccessModifier <color:$Orange>$Restriction</color> <color:$Foreground>$Name</color> : <color:$Purple>$Type</color>
 !else
-$AccessModifier  <color:#f8f8f2>$Name</color> : <color:#bd93f9>$Type</color>
+$AccessModifier  <color:$Foreground>$Name</color> : <color:$Purple>$Type</color>
 !endif
 !endprocedure
 
-' Method Procedures
+'  __  __     _   _            _                    
+' |  \/  |___| |_| |_  ___  __| | 
+' | |\/| / -_)  _| ' \/ _ \/ _` | 
+' |_|  |_\___|\__|_||_\___/\__,_|  
+                                                                           
 !unquoted procedure $Method($AccessModifier, $MethodName, $Parameter, $ReturnValue)
 !if ($ReturnValue != "")
-$AccessModifier <color:#ff79c6>$MethodName(<color:#f8f8f2>$Parameter</color><color:#ff79c6>)</color><color:#f8f8f2> : </color><color:#f1fa8c>$ReturnValue</color>
+$AccessModifier <color:$Pink>$MethodName(<color:$Foreground>$Parameter</color><color:$Pink>)</color><color:$Foreground> : </color><color:#f1fa8c>$ReturnValue</color>
 !else
-$AccessModifier <color:#ff79c6>$MethodName(<color:#f8f8f2>$Parameter</color><color:#ff79c6>)</color> 
+$AccessModifier <color:$Pink>$MethodName(<color:$Foreground>$Parameter</color><color:$Pink>)</color> 
 !endif
 !endprocedure
 
-' Constructor Procedures
+'   ___             _               _            
+'  / __|___ _ _  __| |_ _ _ _  _ __| |_ ___ _ _  
+' | (__/ _ \ ' \(_-<  _| '_| || / _|  _/ _ \ '_| 
+'  \___\___/_||_/__/\__|_|  \_,_\__|\__\___/_| 
 !unquoted procedure $Constructor($AccessModifier, $MethodName, $Parameter)
-$AccessModifier <color:#ff79c6>$MethodName(<color:#f8f8f2>$Parameter</color><color:#ff79c6>)</color>
+$AccessModifier <color:$Pink>$MethodName(<color:$Foreground>$Parameter</color><color:$Pink>)</color>
 !endprocedure
 
-' Relations in UML
+'  ___     _      _   _             
+' | _ \___| |__ _| |_(_)___ _ _  ___
+' |   / -_) / _` |  _| / _ \ ' \(_-<
+' |_|_\___|_\__,_|\__|_\___/_||_/__/
+                                   
 !unquoted procedure $InherritsFromAbstraction($Concrete,$Abstraction)
 $Concrete ..|> $Abstraction
 !endprocedure
@@ -91,3 +102,252 @@ $ObjectA *-- $ObjectB
 !unquoted procedure $ObjectAggregation($ObjectA,$ObjectB)
 $ObjectA o-- $ObjectB
 !endprocedure
+
+'  ___ ___ ___  _   _ ___ _  _  ___ ___   ___ ___   _   ___ ___    _   __  __  
+' / __| __/ _ \| | | | __| \| |/ __| __| |   \_ _| /_\ / __| _ \  /_\ |  \/  | 
+' \__ \ _| (_) | |_| | _|| .` | (__| _|  | |) | | / _ \ (_ |   / / _ \| |\/| | 
+' |___/___\__\_\\___/|___|_|\_|\___|___| |___/___/_/ \_\___|_|_\/_/ \_\_|  |_| 
+!unquoted procedure $Message($SMSObjectA, $SMSObjectB, $SMSMethod, $SMS_Parameters)
+!if ($SMSMethod!="")
+$SMSObjectA -[$Orange]> $SMSObjectB : <color:$Pink>$SMSMethod(</color><color:$Foreground>$SMS_Parameters</color><color:$Pink>)</color>
+!else
+$SMSObjectA -[$Orange]> $SMSObjectB 
+!endif
+!endprocedure
+
+!unquoted procedure $SynchronousReturnMessage($SMSObjectA, $SMSObjectB, $SMSMethod, $SMS_Parameters)
+$SMSObjectA <[$Orange]- $SMSObjectB : <color:$Pink>$SMSMethod(</color><color:$Foreground>$SMS_Parameters</color><color:$Pink>)</color>
+!endprocedure
+
+!unquoted procedure $ASynchronousMessage($AMSObjectA, $AMSObjectB, $AMSMethod, $AMS_Parameters)
+$AMSObjectA -[$Orange]->> $AMSObjectB : <color:$Pink>$AMSMethod(</color><color:$Foreground>$AMS_Parameters</color><color:$Pink>)</color>
+!endprocedure
+
+!unquoted procedure $ReturnMessage($AMSObjectA, $AMSObjectB, $AMSMethod, $AMS_Parameters)
+$AMSObjectA <-[$Orange]- $AMSObjectB : <color:$Pink>$AMSMethod(</color><color:$Foreground>$AMS_Parameters</color><color:$Pink>)</color>
+!endprocedure
+
+!unquoted procedure $PlainMessage($AMSObjectA, $AMSObjectB, $AMSMessage,)
+$AMSObjectA -[$Orange]> $AMSObjectB : <color:$Yellow>$AMSMessage</color>
+!endprocedure
+!unquoted procedure $PlainReturnMessage($AMSObjectA, $AMSObjectB, $AMSMessage,)
+$AMSObjectA <-[$Orange]- $AMSObjectB : <color:$Yellow>$AMSMessage</color>
+!endprocedure
+
+
+skinparam defaultFontName       "IBM Plex Sans, Noto Sans, Verdana"
+skinparam defaultFontSize       12
+skinparam shadowing             false
+skinparam roundcorner           0
+skinparam ParticipantPadding    30
+skinparam BoxPadding            30
+skinparam Padding               2
+skinparam nodesep               30
+skinparam ranksep               100
+skinparam dpi                   300
+
+skinparam title {
+	FontColor	                 $Foreground
+	BorderColor	                 $Foreground
+	FontSize	    	         20
+	BorderRoundCorner            8
+	BorderThickness 	         0
+	BackgroundColor              $BGCOLOR
+}
+skinparam legend {
+	BackgroundColor         	$Background
+	BorderColor             	$Red
+	FontColor               	$Foreground
+	BorderThickness				3
+}
+
+!startsub arrow
+skinparam arrow {
+	Thickness               	3
+	Color                   	$Cyan
+	FontColor               	$Green
+}
+!endsub
+
+
+!startsub note
+skinparam note {
+	BorderThickness         	1
+	BackgroundColor         	$Green
+	BorderColor             	$Green
+	FontColor               	$Background
+	RoundCorner             	0
+}
+!endsub
+
+!startsub class
+skinparam Class {
+    'skinparam ClassHeaderBackgroundColor $Purple
+	HeaderBackgroundColor   	$Purple
+	StereotypeFontColor     	$Foreground
+	StereotypeFontSize      	9
+	BorderThickness         	2
+    BorderColor             	$Purple
+    FontSize                	16
+	AttributeFontColor      	$Foreground
+	AttributeFontSize       	11
+    AttributeIconSize       	10
+    BackgroundColor         	$CurrentLine
+    FontColor               	$Foreground
+    StereotypeFontColor     	$Orange 
+}
+!endsub
+
+!startsub interface
+
+skinparam interface {
+	BackgroundColor  			$Background
+	BorderColor  				$Purple
+	FontColor			 		$Foreground
+}
+!endsub
+
+!startsub component
+skinparam component {
+	BackgroundColor         	$CurrentLine
+	BorderColor             	$Foreground
+    BorderThickness         	0
+}
+!endsub
+
+!startsub sequence
+skinparam sequence {
+	BorderColor 				$Red
+	' For some reason sequence title font color does not pick up from global
+	TitleFontColor 				$Orange
+	BackgroundColor 			$Background 
+	StartColor 					$Foregound
+	EndColor 					$Foreground
+	''
+	BoxBackgroundColor 			$CurrentLine
+	BoxBorderColor 				$CurrentLine
+	BoxFontColor 				$Background
+	' ''
+	DelayFontColor 				$Orange
+	''
+	LifeLineBorderColor 		$Foreground
+	BorderThickness 			2
+	LifeLineBackgroundColor 	$Foreground
+	' ''
+	GroupBorderColor 			$Red
+	GroupFontColor 				$Red
+	GroupFontStyle 				bold
+	GroupHeaderFontColor 		$Background
+	GroupBackgroundColor 		$Red 
+    GroupBodyBackgroundColor 	#Transparent
+	GroupHeaderBackgroundColor 	$Red
+    GroupBorderThickness 		1
+	' ''
+	DividerBackgroundColor 		$Orange
+    DividerBorderColor 			$Orange
+    DividerBorderThickness 		2
+    DividerFontColor 			$CurrentLine
+	' ''
+	ReferenceBackgroundColor 	$Comment
+	ReferenceHeaderBorderColor 	$Yellow
+	ReferenceHeaderBackgroundColor $Yellow
+	ReferenceBorderColor 		$Comment
+	ReferenceFontColor 			$Background
+	ReferenceHeaderFontColor 	$Foreground
+	' ''
+	StereotypeFontColor 		$Foreground
+    
+}
+!endsub
+skinparam Style strictUML
+
+!startsub participant
+skinparam participant {
+	ParticipantBorderThickness 	3
+    BackgroundColor 			$Orange 
+    BorderColor 				$Orange 
+}
+!endsub
+!startsub package
+skinparam package {
+	BackgroundColor         	$Background
+	BorderThickness         	3
+    FontColor               	$Foreground 
+    StereotypeFontColor     	$Foreground 
+    BorderColor             	$Red
+}
+!endsub
+!startsub rectangle
+skinparam rectangle {
+    FontColor               	$Foreground
+    FontSize                	16
+	BackgroundColor         	$Background
+	BorderThickness         	2
+    BorderColor             	$Red
+	StereotypeFontColor     	$Foreground
+}
+!endsub
+!startsub actor
+skinparam actor {
+	BackgroundColor     		$Orange 
+    BorderThickness     		3
+    BorderColor         		$Orange
+    FontColor           		$Orange 
+}
+!endsub
+
+!startsub database
+skinparam database {
+	BorderColor         		$Background
+	BackgroundColor     		$Orange
+	Roundcorner         		0
+}
+!endsub
+
+!startsub folder
+
+skinparam folder {
+	BackgroundColor 			$CurrentLine
+  	BorderColor 				$Purple
+	FontColor 					$Foreground
+	BorderThickness 			3
+	Roundcorner 				0
+}
+!endsub
+
+!startsub frame
+
+skinparam frame {
+	BackgroundColor 			$CurrentLine
+  	BorderColor 				$Purple
+	FontColor 					$Foreground
+	BorderThickness 			3
+	Roundcorner 				0
+}
+!endsub
+
+' state here
+
+
+!startsub card
+
+skinparam card {
+	BackgroundColor 			$CurrentLine
+	BorderColor 				$Purple
+	FontColor 					$Foreground
+	RoundCorner 				0
+}
+!endsub
+
+!startsub file
+
+skinparam file {
+	BackgroundColor 			$CurrentLine
+	BorderColor 				$Purple
+	FontColor 					$Foreground
+	RoundCorner 				0
+
+}
+!endsub
+
+
